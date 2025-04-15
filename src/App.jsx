@@ -16,7 +16,6 @@ import SimpleMehndi from './pages/SimpleQuickMehndi';
 import ArabicMehndi from './pages/ArabicMehndi';
 import GuestMehndi from './pages/GuestMehndi';
 
-
 function HomePage() {
   return (
     <>
@@ -29,8 +28,8 @@ function HomePage() {
 
 function App() {
   return (
-    <div className="App bg-dark text-ivory min-h-screen">
-      <Topbar/>
+    <>
+      <Topbar />
       {/* Horizontal line between topbar and navbar */}
       <hr className="h-1 bg-gradient-to-r from-[#E8C76F] via-[#C19A6B] to-[#4B2E2B] border-0 rounded-full " />
       <Navbar />
@@ -39,13 +38,11 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<ServicesSection />} />
-          <Route path="/bridal-mehndi-packages" element={< BridalMehndi/>} />
+          <Route path="/bridal-mehndi-packages" element={<BridalMehndi />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/contact" element={<Contact />} />
 
-
           {/* Mehndi Services Routes */}
-          <Route path= "/bridal-mehndi-packages" element={<BridalMehndi />} />
           <Route path="/festive-mehndi" element={<FestiveMehndi />} />
           <Route path="/party-event-mehndi" element={<PartyEventMehndi />} />
           <Route path="/simple-mehndi" element={<SimpleMehndi />} />
@@ -54,7 +51,7 @@ function App() {
         </Routes>
       </main>
       <Footer />
-    </div>
+    </>
   );
 }
 
