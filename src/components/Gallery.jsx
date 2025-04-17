@@ -1,19 +1,22 @@
 import React from 'react';
+import jai from '../jaipuriaimg/jai.jpeg';
 
 const Gallery = () => {
   const galleryItems = [
-    { id: 1, image: '/images/portfolio/item1.jpg', alt: 'Elegant Mehndi design on hands' },
-    { id: 2, image: '/images/portfolio/item2.jpg', alt: 'Bridal Mehndi full hand' },
-    { id: 3, image: '/images/portfolio/item3.jpg', alt: 'Intricate foot Mehndi design' },
-    { id: 4, image: '/images/portfolio/item4.jpg', alt: 'Traditional Rajasthani patterns' },
-    { id: 5, image: '/images/portfolio/item5.jpg', alt: 'Contemporary floral artwork' },
-    { id: 6, image: '/images/portfolio/item6.jpg', alt: 'Groom Mehndi' },
-    { id: 7, image: '/images/portfolio/item7.jpg', alt: 'Festival Mehndi design' },
-    { id: 8, image: '/images/portfolio/item8.jpg', alt: 'Minimal Arabic style design' }
+    { id: 1, image: jai, alt: 'Elegant Mehndi design on hands' },
+    { id: 2, image: jai, alt: 'Bridal Mehndi full hand' },
+    { id: 3, image: jai, alt: 'Intricate foot Mehndi design' },
+    { id: 4, image: jai, alt: 'Traditional Rajasthani patterns' },
+    { id: 5, image: jai, alt: 'Contemporary floral artwork' },
+    { id: 6, image: jai, alt: 'Groom Mehndi' },
+    { id: 7, image: jai, alt: 'Festival Mehndi design' },
+    { id: 8, image: jai, alt: 'Minimal Arabic style design' }
   ];
 
   return (
-    <section id="gallery" className="py-16 bg-[#4B2E2B]">
+    <section id="gallery" className="py-20 bg-[#6B2737]"> {/* Henna Maroon */}
+    {/* Top Divider Line */}
+    <div className="h-1 w-full bg-[#C8A974]"></div>
       <div className="container mx-auto px-4">
         <h2 className="text-4xl font-bold mb-12 text-center text-[#E8C76F]">Gallery</h2>
         

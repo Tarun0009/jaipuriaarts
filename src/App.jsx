@@ -31,7 +31,11 @@ function App() {
     <>
       <Topbar />
       {/* Horizontal line between topbar and navbar */}
-      <hr className="h-1 bg-gradient-to-r from-[#E8C76F] via-[#C19A6B] to-[#4B2E2B] border-0 rounded-full " />
+      <hr className="h-1.5 bg-gradient-to-r from-[#6B2737] via-[#E57A44] to-[#4B2E2B] border-0 rounded-full 
+             shadow-[0_2px_4px_rgba(0,0,0,0.1)] 
+             animate-line-expand origin-left
+             transition-all duration-1000 ease-out
+             group-hover:via-[#C8A974] group-hover:shadow-[0_3px_6px_rgba(0,0,0,0.15)]" />
       <Navbar />
       <main>
         <Routes>

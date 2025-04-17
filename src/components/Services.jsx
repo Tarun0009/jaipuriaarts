@@ -1,21 +1,29 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-  faHandSparkles, faLeaf, faSpa, faGem,
-  faBrush, faHeart
+  faHandSparkles,
+  faLeaf,
+  faSpa,
+  faGem,
+  faBrush,
+  faHeart
 } from '@fortawesome/free-solid-svg-icons';
 
 const ServiceCard = ({ icon, title, description, link }) => {
   return (
-    <div className="bg-[#4B2E2B] p-6 rounded-lg border border-[#E8C76F] border-b-4 text-center hover:brightness-110 transition duration-300">
-      <div className="text-[#E8C76F] mb-4">
+    <div className="p-6 rounded-lg border-b-4 text-center transition-all duration-300 bg-[#F5EDE3] border-[#6B2737] hover:bg-[#F8F3EC]">
+      <div className="mb-4 text-[#6B2737]">
         <FontAwesomeIcon icon={icon} size="2x" />
       </div>
-      <h3 className="text-xl font-bold mb-2 text-[#E8C76F]">{title}</h3>
-      <p className="text-white">{description}</p>
+      <h3 className="text-xl font-bold mb-2 text-[#6B2737]">
+        {title}
+      </h3>
+      <p className="text-[#333333]">
+        {description}
+      </p>
       <a
         href={link}
-        className="text-[#E8C76F] mt-4 inline-block font-medium transition duration-300 hover:underline"
+        className="mt-4 inline-block font-medium text-[#6B2737] transition duration-300 hover:text-[#E57A44]"
       >
         Learn More
       </a>
@@ -64,20 +72,14 @@ const ServicesSection = () => {
   ];
 
   return (
-    <section id="services" className="py-16 bg-[#4B2E2B]">
+    <section id="services" className="py-16 bg-[#6B2737]">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl font-bold mb-12 text-center text-[#E8C76F]">
           Our Services
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
-            <ServiceCard
-              key={index}
-              icon={service.icon}
-              title={service.title}
-              description={service.description}
-              link={service.link}
-            />
+            <ServiceCard key={index} {...service} />
           ))}
         </div>
       </div>
