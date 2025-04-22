@@ -1,11 +1,11 @@
 // Topbar.js
 import React from 'react';
 import logo from '../jaipuriaimg/jaipuriaarts.jpeg';
-import Pattern from './Pattern';
+
 
 const Topbar = () => {
   return (
-    <Pattern>
+
       <header className="bg-[#6B2737] shadow-lg py-4"> {/* Henna Stain maroon */}
         <div className="container mx-auto flex justify-center items-center">
           {/* Logo with gold border */}
@@ -30,7 +30,7 @@ const Topbar = () => {
 </h1>
         </div>
       </header>
-    </Pattern>
+   
   );
 };
 

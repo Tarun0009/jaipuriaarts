@@ -1,13 +1,39 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFacebookF, faTwitter, faInstagram, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
+import {
+  faFacebookF,
+  faTwitter,
+  faInstagram,
+  faLinkedinIn,
+  faWhatsapp,
+} from '@fortawesome/free-brands-svg-icons';
+import { faArrowCircleUp } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 import logo from '../jaipuriaimg/jaipuriaarts.jpeg';
+import ModalImage from 'react-modal-image';
+
+import jai1 from "../jaipuriaimg/jai1.jpeg";
+import jai2 from "../jaipuriaimg/jai2.jpeg";
+import jai3 from "../jaipuriaimg/jai3.jpeg";
+import jai4 from "../jaipuriaimg/jai4.jpeg";
 
 const Footer = () => {
+  const [showTopBtn, setShowTopBtn] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowTopBtn(window.scrollY > 300);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
-    <footer className="pt-0 bg-[#1C1C1C]">
-      {/* Top Divider Line */}
+    <footer className="relative pt-0 bg-[#1C1C1C]">
       <div className="h-1 w-full bg-[#C8A974]"></div>
 
       <div className="container mx-auto px-4 py-12">
@@ -66,21 +92,22 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Newsletter */}
-          <div className="newsletter">
-            <h3 className="text-xl font-bold mb-4 text-[#C8A974]">Newsletter</h3>
-            <p className="text-[#E5E5E5] mb-4">
-              Subscribe to stay updated with our latest mehndi designs!
-            </p>
-            <div className="flex">
-              <input
-                type="email"
-                placeholder="Your email"
-                className="bg-[#333333] text-[#E5E5E5] focus:ring-[#C8A974] border-none p-2 w-full focus:outline-none focus:ring-1"
-              />
-              <button className="bg-[#C8A974] hover:bg-[#E57A44] text-[#1C1C1C] px-4 transition duration-300">
-                →
-              </button>
+          {/* Footer Gallery */}
+          <div className="footer-gallery">
+            <h3 className="text-xl font-bold mb-4 text-[#C8A974]">Gallery</h3>
+            <div className="grid grid-cols-3 gap-2">
+              {[jai1, jai2, jai3, jai4, jai1, jai2].map((img, idx) => (
+                <div key={idx} className="rounded overflow-hidden">
+                  <ModalImage
+                    small={img}
+                    large={img}
+                    alt={`Mehndi design ${idx + 1}`}
+                    hideDownload
+                    hideZoom
+                    className="rounded-md object-cover cursor-pointer"
+                  />
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -90,6 +117,31 @@ const Footer = () => {
           <p>© 2025 Jaipuria Arts. All rights reserved.</p>
         </div>
       </div>
+
+      {showTopBtn && (
+  <div className="fixed bottom-5 right-5 flex space-x-3 z-50">
+    {/* Scroll to Top Button */}
+    <button
+      onClick={scrollToTop}
+      className="bg-[#C8A974] text-[#1C1C1C] shadow-md hover:bg-[#1C1C1C] hover:text-[#C8A974] transition duration-300 p-3 rounded-full"
+      aria-label="Scroll to Top"
+    >
+      <FontAwesomeIcon icon={faArrowCircleUp} size="lg" />
+    </button>
+
+    {/* WhatsApp Button */}
+    <a
+      href="https://wa.me/919876543210"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="bg-green-500 hover:bg-green-600 text-white py-3 px-3 rounded-full shadow-lg transition duration-300"
+      aria-label="Chat on WhatsApp"
+    >
+      <FontAwesomeIcon icon={faWhatsapp} size="lg" />
+    </a>
+  </div>
+)}
+
     </footer>
   );
 };

@@ -15,13 +15,13 @@ import PartyEventMehndi from './pages/PartyEventMehndi';
 import SimpleMehndi from './pages/SimpleQuickMehndi';
 import ArabicMehndi from './pages/ArabicMehndi';
 import GuestMehndi from './pages/GuestMehndi';
+import TestimonialsSection from './components/Testimonials';
 
 function HomePage() {
   return (
     <>
       <HeroSection />
-      <ServicesSection />
-      <Gallery />
+      <TestimonialsSection />
     </>
   );
 }

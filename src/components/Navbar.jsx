@@ -5,7 +5,7 @@ const Navbar = () => {
   const location = useLocation();
 
   return (
-    <header className="bg-[#6B2737] text-[#F5EDE3] py-4 px-6 w-full z-20 shadow-lg sticky top-0">
+    <header className="bg-[#6B2737] text-[#F5EDE3] py-4 px-6 w-full z-20 shadow-lg">
       <nav className="w-full">
         <ul className="flex justify-center flex-wrap gap-8 text-lg font-playfair">
           <li>
